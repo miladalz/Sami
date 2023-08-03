@@ -1,5 +1,6 @@
 using Infrastructure;
 using Infrastructure.Assembly;
+using Microsoft.Extensions.Configuration;
 using WebApi.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,7 +24,7 @@ builder.Services.AddSwaggerGen();
 //identity config
 builder.Services.AddAuthentication();
 builder.Services.ConfigureIdentity();
-
+builder.Services.ConfigureJWT(builder.Configuration);
 
 var app = builder.Build();
 
