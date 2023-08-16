@@ -44,7 +44,8 @@ namespace Infrastructure.Identity.Service
         {
             //run following line in cmd
             //C:\Windows\system32>setx SECRET "MicrodevSecretKey123456789123456789123456789" /M
-            var key = Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("SECRET"));
+            //var key = Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("SECRET"));
+            var key = Encoding.UTF8.GetBytes("MicrodevSecretKey123456789123456789123456789");
             var secret = new SymmetricSecurityKey(key);
 
             return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
