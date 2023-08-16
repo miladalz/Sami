@@ -23,11 +23,16 @@ namespace WebApi.Controllers
 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
-        {
-            _logger.LogInfo("Here is info message from our values controller.");
-            _logger.LogDebug("Here is debug message from our values controller.");
-            _logger.LogWarn("Here is warn message from our values controller.");
-            _logger.LogError("Here is an error message from our values controller.");
+        {            
+            try
+            {
+                var ss = "milad";
+                var sbubs = ss.Substring(0, 10);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,nameof(WeatherForecastController));
+            }
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
