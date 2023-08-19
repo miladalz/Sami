@@ -1,5 +1,4 @@
-﻿using Application.Authentication;
-using AutoMapper;
+﻿using AutoMapper;
 using Domain.Dtos.Authentication;
 using Infrastructure.Identity.Models;
 

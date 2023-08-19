@@ -1,11 +1,8 @@
 using Infrastructure;
 using Infrastructure.Assembly;
 using LoggerService;
-using Microsoft.Extensions.Configuration;
 using WebApi.Infrastructure.Extensions;
 using NLog;
-using System.IO;
-using Application;
 
 var logger = LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 

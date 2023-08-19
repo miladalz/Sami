@@ -3,9 +3,6 @@ using Application.Interfaces.Repositories;
 using Domain.Dtos.Person;
 using Domain.Entities;
 using Domain.Errors;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.BusinessServices

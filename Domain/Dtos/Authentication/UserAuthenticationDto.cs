@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Domain.Dtos.Authentication
+﻿namespace Domain.Dtos.Authentication
 {
     public class UserAuthenticationDto
     {       
