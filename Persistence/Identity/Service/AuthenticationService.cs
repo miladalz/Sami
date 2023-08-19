@@ -1,4 +1,5 @@
 ﻿using Application.Authentication;
+using Domain.Dtos.Authentication;
 using Infrastructure.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;

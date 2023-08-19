@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Application.Authentication
+namespace Domain.Dtos.Authentication
 {
     public class UserRegistrationDto
     {

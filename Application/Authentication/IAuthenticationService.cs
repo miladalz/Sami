@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Domain.Dtos.Authentication;
+using System.Threading.Tasks;
 
 namespace Application.Authentication
 {
