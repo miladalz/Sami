@@ -4,10 +4,10 @@ using Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 namespace Infrastructure.Repositories
 {
-    public class RepositoryPerson : RepositoryBase<Person>, IPersonRepository
+    public class PersonRepository : RepositoryBase<Person>, IPersonRepository
     {
         private readonly SamiDbContext _context;
-        public RepositoryPerson(SamiDbContext context) : base(context)
+        public PersonRepository(SamiDbContext context) : base(context)
         {
             _context = context;
         }
