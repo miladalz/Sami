@@ -3,13 +3,11 @@ using Infrastructure.Assembly;
 using LoggerService;
 using WebApi.Infrastructure.Extensions;
 using NLog;
+using Infrastructure.Middlewares;
 
 var logger = LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
 var builder = WebApplication.CreateBuilder(args);
-
-//LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
-
 
 // Add db context
 builder.Services.AddDbContext(builder.Configuration["ConnectionString"]);
@@ -26,9 +24,8 @@ builder.Services.AddAutoMapper(applicationAssembly);
 
 builder.Services.AddControllers();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// add Swagger
+builder.Services.ConfigureSwagger();
 
 //identity config
 builder.Services.AddAuthentication();
@@ -44,11 +41,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//configure exception middleware
+app.UseMiddleware(typeof(GlobalErrorHandlingMiddleware));
 
+app.UseHttpsRedirection();
 app.UseAuthentication(); 
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

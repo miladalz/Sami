@@ -21,7 +21,7 @@ namespace Application.BusinessServices
 
             if (personExist != null)
             {
-                throw new BusinessException("Email has been registered in the system.", 400);
+                throw new BusinessException("Email has been registered in the system.");
             }
 
             var result = await _personRepository.Add(new Person()

@@ -22,8 +22,10 @@ namespace WebApi.Controllers
 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
-        {            
-            try
+        {
+            var ss = "milad";
+            var sbubs = ss.Substring(0, 10);
+            /*try
             {
                 var ss = "milad";
                 var sbubs = ss.Substring(0, 10);
@@ -31,7 +33,7 @@ namespace WebApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex,nameof(WeatherForecastController));
-            }
+            }*/
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
